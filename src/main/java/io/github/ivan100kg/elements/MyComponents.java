@@ -7,6 +7,7 @@ package io.github.ivan100kg.elements;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import javax.swing.ButtonGroup;
 
 /**
  *
@@ -24,7 +25,13 @@ public class MyComponents extends javax.swing.JFrame {
         arr.add("My pussy");
         arr.add("Hello Mister Twister");
         arr.add("Hi there");
+        
         initComponents();
+        
+        ButtonGroup radioButtonGroup = new ButtonGroup();
+        radioButtonGroup.add(myCustomName);
+        radioButtonGroup.add(jRadioButton2);
+        radioButtonGroup.add(jRadioButton3);
     }
 
     /**
@@ -41,6 +48,9 @@ public class MyComponents extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        myCustomName = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,6 +67,27 @@ public class MyComponents extends javax.swing.JFrame {
 
         jTextField2.setText("jTextField2");
 
+        myCustomName.setText("my Radio Button");
+        myCustomName.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                myCustomNameActionPerformed(evt);
+            }
+        });
+
+        jRadioButton2.setText("jRadioButton2");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+
+        jRadioButton3.setText("jRadioButton3");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -69,12 +100,17 @@ public class MyComponents extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(23, 23, 23)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton1)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jButton1))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(myCustomName)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jRadioButton2)
+                                    .addComponent(jRadioButton3))))))
                 .addContainerGap(459, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -88,7 +124,13 @@ public class MyComponents extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 60, Short.MAX_VALUE)
                     .addComponent(jTextField1))
-                .addContainerGap(245, Short.MAX_VALUE))
+                .addGap(30, 30, 30)
+                .addComponent(myCustomName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jRadioButton3)
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -109,7 +151,22 @@ public class MyComponents extends javax.swing.JFrame {
         jLabel1.setText(arr.get(new Random().nextInt(arr.size())));
         String enter = jTextField1.getText();
         jTextField2.setText(enter + " hui na!");
+        if (myCustomName.isSelected()) {
+            jTextField1.setText("Ok I preesed it!");
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void myCustomNameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_myCustomNameActionPerformed
+  
+    }//GEN-LAST:event_myCustomNameActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+       
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+       
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -151,7 +208,10 @@ public class MyComponents extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JRadioButton myCustomName;
     // End of variables declaration//GEN-END:variables
 }
