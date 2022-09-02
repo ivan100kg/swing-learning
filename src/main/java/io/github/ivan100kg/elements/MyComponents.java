@@ -57,6 +57,10 @@ public class MyComponents extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        result = new javax.swing.JTextField();
+        javax.swing.JLabel label20 = new javax.swing.JLabel();
+        confirm = new javax.swing.JButton();
+        password = new javax.swing.JPasswordField();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem1 = new javax.swing.JMenuItem();
@@ -107,6 +111,17 @@ public class MyComponents extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
+        result.setEnabled(false);
+
+        label20.setText("password:");
+
+        confirm.setText("confirm");
+        confirm.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                confirmActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -140,15 +155,34 @@ public class MyComponents extends javax.swing.JFrame {
                                         .addComponent(jButton2))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(56, Short.MAX_VALUE))
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(289, 289, 289)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(label20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(confirm)))))
+                .addContainerGap(240, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(61, 61, 61)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(19, 19, 19)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(label20)
+                            .addComponent(password, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(confirm, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(result, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(41, 41, 41)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
@@ -170,7 +204,7 @@ public class MyComponents extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jSlider1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addContainerGap(70, Short.MAX_VALUE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         jMenu1.setText("File");
@@ -250,6 +284,14 @@ public class MyComponents extends javax.swing.JFrame {
         jTextArea1.setText("about");
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
+    private void confirmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_confirmActionPerformed
+        if(password.getText().equals("hui")) {
+            result.setText("Hui is correct");
+        } else {
+            result.setText("Fuck YOU!");
+        }
+    }//GEN-LAST:event_confirmActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -287,6 +329,7 @@ public class MyComponents extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton confirm;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
@@ -307,5 +350,7 @@ public class MyComponents extends javax.swing.JFrame {
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JRadioButton myCustomName;
+    private javax.swing.JPasswordField password;
+    private javax.swing.JTextField result;
     // End of variables declaration//GEN-END:variables
 }
