@@ -82,6 +82,8 @@ public class MyComponents extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jPanel1.setBackground(new java.awt.Color(244, 226, 226));
+
         jLabel1.setText("jLabel1");
 
         jButton1.setText("jButton1");
@@ -226,12 +228,12 @@ public class MyComponents extends javax.swing.JFrame {
         jTabbedPane1.addTab("tab4", jPanel5);
 
         jProgressBar1.addAncestorListener(new javax.swing.event.AncestorListener() {
-            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
-            }
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jProgressBar1AncestorAdded(evt);
             }
             public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
             }
         });
 
