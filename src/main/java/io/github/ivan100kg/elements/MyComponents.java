@@ -4,6 +4,7 @@
  */
 package io.github.ivan100kg.elements;
 
+import java.awt.Toolkit;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -28,6 +29,7 @@ public class MyComponents extends javax.swing.JFrame {
         arr.add("Hi there");
         
         initComponents();
+        this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("image.ico")));
         
         ButtonGroup radioButtonGroup = new ButtonGroup();
         radioButtonGroup.add(myCustomName);
